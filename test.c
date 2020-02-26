@@ -2,15 +2,13 @@
 
 int main(void)
 {
-    int val = 1;
-    int count;
-    while (val < 1000000)
-    {
-        val *= 2;
-        count++;
-        printf("%d,", val);
-    }
-    printf("\nc=%d, val=%d\n", count, val);
+    double r;
+    do {
+        printf("your input:");
+        scanf("%lf", &r);
+    } while (r < 0);
     
+    printf("%f\n", r * r);
+
     return 0;
 }
