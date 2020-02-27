@@ -1,12 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
-    char str[16];
-    size_t i = 0;
-
-    scanf("%15s", str);
-    for (i = 0; str[i] != '\0'; i++);
-    printf("%ld\n", i);
+    char str1[256], str2[] = "ABC";
+    scanf("%s", str1);
+    printf("%d\n", strcmp(str1, str2));
     return 0;
 }
