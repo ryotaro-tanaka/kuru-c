@@ -1,14 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int main(void)
 {
     char str[16];
-    char str1[] = "DRAGON";
-    char str2[] = "QUEST";
+    size_t i = 0;
 
-    sprintf(str, "%s%s%s\n", str1, str2, "hohoho");
-    printf("%s", str);
+    scanf("%15s", str);
+    for (i = 0; str[i] != '\0'; i++);
+    printf("%ld\n", i);
     return 0;
 }
