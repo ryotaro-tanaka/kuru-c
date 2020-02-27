@@ -4,10 +4,11 @@
 
 int main(void)
 {
-    char str[] = "145";
-    char str2[10];
-    strcpy(str2, str);
+    char str[16];
+    char str1[] = "DRAGON";
+    char str2[] = "QUEST";
 
-    printf("%d\n", atoi(str2));
+    sprintf(str, "%s%s%s\n", str1, str2, "hohoho");
+    printf("%s", str);
     return 0;
 }
