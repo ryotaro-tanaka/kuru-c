@@ -1,8 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main(void)
 {
-    char str[6] = {'M', 'A', 'R', 'I', 'O', '\0'};
-    printf("%s\n", str);
+    char str[] = "145";
+    char str2[10];
+    strcpy(str2, str);
+
+    printf("%d\n", atoi(str2));
     return 0;
 }
