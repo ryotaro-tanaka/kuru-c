@@ -2,8 +2,8 @@
 
 int main(void)
 {
-    char str[256] = "DRAGON";
-    scanf("%s", &str[6]);
-    printf("%s\n", str);
+    int *p, i;
+    p = &i;
+    printf("%p\n%p\n", &i, p);
     return 0;
 }
