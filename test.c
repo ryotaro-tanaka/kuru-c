@@ -4,6 +4,7 @@ int main(void)
 {
     int *p, i;
     p = &i;
-    printf("%p\n%p\n", &i, p);
+    *p = 10;
+    printf("%d %d\n", *p, i);
     return 0;
 }
