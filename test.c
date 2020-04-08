@@ -4,16 +4,15 @@ void func(int *pvalue);
 
 int main(void)
 {
-    int value = 10;
-    printf("&value = %p\n", &value);
-    func(&value);
-    printf("value = %d\n", value);
-    return 0;
-}
+    int *data;
+    int average = 0;
+    int array[10] = {11,12,13,14,15,16,17,18,19,110};
 
-void func(int *pvalue)
-{
-    printf("pvalue = %p\n", pvalue);
-    *pvalue = 100;
-    return;
+    // !
+    for (data = array; data != &array[10]; data++) {
+        average += *data;
+    }
+
+    printf("%d\n", average / 10);
+    return 0;
 }
