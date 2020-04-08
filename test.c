@@ -1,34 +1,33 @@
 #include <stdio.h>
+#include <string.h>
 
-void maxmin(int array[], int *max, int *min);
+struct student {
+    int year;
+    int clas;
+    int number;
+    char name[64];
+    double stature;
+    double weight;
+};
 
 int main(void)
 {
-    int i = 0, array[10], max, min;
+    struct student data1, data2;
 
-    do {
-        printf("array[%d] = ", i);
-        scanf("%d", &array[i]);
-        i++;
-    } while (array[i - 1] != -1);
+    // data1
+    data1.year = 3;
+    data1.clas = 4;
+    data1.number = 18;
+    strcpy(data1.name, "MARIO");
+    data1.stature = 168.2;
+    data1.weight = 72.4;
 
-    maxmin(array, &max, &min);
-    printf("max = %d, min = %d\n", max, min);
+    // data2
+    data2 = data1;
+
+    // print
+    printf("%s, %s\n", data1.name, data2.name);
+    printf("%f, %f\n", data1.stature, data2.stature);
+
     return 0;
-}
-
-void maxmin(int array[], int *max, int *min)
-{
-    int i = 0;
-    *max = 0;
-    *min = 100;
-
-    while (array[i] != -1) {
-        if (array[i] > *max) *max = array[i];
-        if (array[i] < *min) *min = array[i];
-        if (i >= 1000) return;
-        i++;
-    }
-
-    return;
 }
