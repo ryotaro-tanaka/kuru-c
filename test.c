@@ -1,18 +1,34 @@
 #include <stdio.h>
 
-void func(int *pvalue);
+void maxmin(int array[], int *max, int *min);
 
 int main(void)
 {
-    int *data;
-    int average = 0;
-    int array[10] = {11,12,13,14,15,16,17,18,19,110};
+    int i = 0, array[10], max, min;
 
-    // !
-    for (data = array; data != &array[10]; data++) {
-        average += *data;
+    do {
+        printf("array[%d] = ", i);
+        scanf("%d", &array[i]);
+        i++;
+    } while (array[i - 1] != -1);
+
+    maxmin(array, &max, &min);
+    printf("max = %d, min = %d\n", max, min);
+    return 0;
+}
+
+void maxmin(int array[], int *max, int *min)
+{
+    int i = 0;
+    *max = 0;
+    *min = 100;
+
+    while (array[i] != -1) {
+        if (array[i] > *max) *max = array[i];
+        if (array[i] < *min) *min = array[i];
+        if (i >= 1000) return;
+        i++;
     }
 
-    printf("%d\n", average / 10);
-    return 0;
+    return;
 }
