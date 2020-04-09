@@ -1,15 +1,12 @@
 #include <stdio.h>
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    FILE *file;
-    file = fopen("output.dat", "rb");
+    if (argc > 1) {
+        printf("%s\n", argv[1]);
+    }
 
-    int buf;
-    fread(&buf, sizeof(buf), 1, file);
-
-    fclose(file);
-
-    printf("%d\n", buf);
+    fflush(stdin);
+    getchar();
     return 0;
 }
