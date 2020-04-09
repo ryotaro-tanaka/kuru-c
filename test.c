@@ -2,9 +2,11 @@
 
 int main(void)
 {
+    int i;
     FILE *file;
-    file = fopen("output.txt", "w");
-    fprintf(file, "hello,world!!");
+    file = fopen("output.txt", "r");
+    fscanf(file, "%d", &i);
     fclose(file);
+    printf("%d\n", i);
     return 0;
 }
