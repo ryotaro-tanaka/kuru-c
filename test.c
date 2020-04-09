@@ -2,11 +2,12 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc > 1) {
-        printf("%s\n", argv[1]);
-    }
+    while (argc > 0) {
+        argc--;
 
-    fflush(stdin);
-    getchar();
+        if (argv[argc][0] == '-') {
+            if (argv[argc][1] == 'a') printf("option a\n");
+        }
+    }
     return 0;
 }
