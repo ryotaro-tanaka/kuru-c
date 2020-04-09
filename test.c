@@ -2,11 +2,12 @@
 
 int main(void)
 {
-    int i;
     FILE *file;
-    file = fopen("output.txt", "r");
-    fscanf(file, "%d", &i);
+    file = fopen("output.dat", "wb");
+
+    int buf = 100;
+    fwrite(&buf, sizeof(buf), 1, file);
+
     fclose(file);
-    printf("%d\n", i);
     return 0;
 }
