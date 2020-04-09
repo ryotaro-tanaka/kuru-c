@@ -1,33 +1,38 @@
 #include <stdio.h>
 #include <string.h>
 
-struct student {
+typedef struct {
     int year;
     int clas;
     int number;
     char name[64];
     double stature;
     double weight;
-};
+} student;
+
+void student_print(student *data);
 
 int main(void)
 {
-    struct student data1, data2;
+    student data;
 
-    // data1
-    data1.year = 3;
-    data1.clas = 4;
-    data1.number = 18;
-    strcpy(data1.name, "MARIO");
-    data1.stature = 168.2;
-    data1.weight = 72.4;
-
-    // data2
-    data2 = data1;
+    // assignment
+    data.year = 3;
+    data.clas = 4;
+    data.number = 18;
+    strcpy(data.name, "MARIO");
+    data.stature = 168.2;
+    data.weight = 72.4;
 
     // print
-    printf("%s, %s\n", data1.name, data2.name);
-    printf("%f, %f\n", data1.stature, data2.stature);
+    student_print(&data);
 
     return 0;
+}
+
+void student_print(student *data)
+{
+    printf("%s\n", data->name);
+    printf("%f\n", data->stature);
+    return;
 }
