@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-#define PRINT_TEMP printf("temp\n");
+#define PRINTM(X) printf("%d\n", X);
 
 int main(int argc, char *argv[])
 {
-    PRINT_TEMP;
+    PRINTM(10);
     return 0;
 }
