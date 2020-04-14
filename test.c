@@ -1,13 +1,9 @@
 #include <stdio.h>
 
+#define PRINT_TEMP printf("temp\n");
+
 int main(int argc, char *argv[])
 {
-    while (argc > 0) {
-        argc--;
-
-        if (argv[argc][0] == '-') {
-            if (argv[argc][1] == 'a') printf("option a\n");
-        }
-    }
+    PRINT_TEMP;
     return 0;
 }
