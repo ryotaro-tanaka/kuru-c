@@ -2,7 +2,7 @@ CC := gcc
 CFLAGS := -g -Wall -Wextra
 
 # $ make
-main: main.o sum.o
+main: main.o
 
 # $ make clean
 clean:
